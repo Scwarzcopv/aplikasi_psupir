@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Apelikasi perhitungan psupir">
+	<meta name="author" content="scwarzcopv">
+	<meta name="keywords" content="apelikasi, perhitungan, psupir">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="src/img/custom_avatars/logo.png"/>
+
+	<title>Apelikasi Psupir</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<!-- BEGIN SETTINGS -->
+	<link class="js-stylesheet" href="static/css/light.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="static/css/custom-style.css">
+</head>
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-layout="default">
+	<!-- <audio src="src/sfx/fail.mp3" id="sfx_fail" class="d-none"></audio>
+	<audio src="src/sfx/yatta.mp3" id="sfx_yatta" class="d-none"></audio> -->
+	<main class="row d-flex align-items-center justify-content-center h-100 w-100 mx-auto">
+		<div class="row">
+			<div class="mx-auto container">
+				<div class="align-middle">
+
+					<div class="text-center mt-4" id="judol">
+						<h1 class="h2 fw-bold">Apelikasi Psupir</h1>
+						<p class="lead">
+							<!-- <span class="fw-bold"></span> -->
+						</p>
+					</div>
+
+					<div class="card box-44 container" id="form_input">
+						<div class="card-body">
+							<div class="m-sm-4">
+								<div class="text-center mb-3">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" />
+									<div class="mt-2 lead fw-bold">dr. Amba, J.Mk.</div> -->
+								</div>
+								<form>
+									<div class="row">
+										<div class="col-12 col-lg-3">
+											<label class="form-label user-select-none mb-1">Jumlah Baris <span class="text-danger">*</span></label>
+											<div class="d-flex align-items-center">
+												<input class="button-55 button-55-focus w-100 py-1" type="text" name="input_jml" id="input_jmlBaris" maxlength="30" autocomplete="off"  data-inputmask="'alias': 'numeric', 'min': 1, 'max': 26, 'minOptional': false, 'groupSeparator': '.'" value="8"/>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_jmlBaris"  data-operator="-"><i class="fa-solid fa-minus"></i></button>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_jmlBaris"  data-operator="+""><i class="fa-solid fa-plus"></i></button>
+											</div>
+										</div>
+										<div class="col-12 col-lg-3">
+											<label class="form-label user-select-none mb-1">Jumlah Kolom Kanan <span class="text-danger">*</span></label>
+											<div class="d-flex align-items-center">
+												<input class="button-55 button-55-focus w-100 py-1" type="text" name="input_jml" id="input_colKanan" maxlength="30" autocomplete="off"  data-inputmask="'alias': 'numeric', 'min': 1, 'max': 26, 'minOptional': false, 'groupSeparator': '.'" value="1"/>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_colKanan"  data-operator="-"><i class="fa-solid fa-minus"></i></button>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_colKanan"  data-operator="+""><i class="fa-solid fa-plus"></i></button>
+											</div>
+										</div>
+										<div class="col-12 col-lg-3">
+											<label class="form-label user-select-none mb-1">Jumlah Spasi <span class="text-danger">*</span></label>
+											<div class="d-flex align-items-center">
+												<input class="button-55 button-55-focus w-100 py-1" type="text" name="input_jml" id="input_jmlSpasi" maxlength="30" autocomplete="off"  data-inputmask="'alias': 'numeric', 'min': 0, 'max': 26, 'minOptional': false, 'groupSeparator': '.'" value="1"/>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_jmlSpasi"  data-operator="-"><i class="fa-solid fa-minus"></i></button>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_jmlSpasi"  data-operator="+"><i class="fa-solid fa-plus"></i></button>
+											</div>
+										</div>
+										<div class="col-12 col-lg-3">
+											<label class="form-label user-select-none mb-1">Jumlah Kolom Kiri <span class="text-danger">*</span></label>
+											<div class="d-flex align-items-center">
+												<input class="button-55 button-55-focus w-100 py-1" type="text" name="input_jml" id="input_colKiri" maxlength="30" autocomplete="off"  data-inputmask="'alias': 'numeric', 'min': 0, 'max': 26, 'minOptional': false, 'groupSeparator': '.'" value="1"/>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_colKiri"  data-operator="-"><i class="fa-solid fa-minus"></i></button>
+												<button class="button button-55 button-55-active py-1" type="button" name="btn_operatorVal" data-id="input_colKiri"  data-operator="+"><i class="fa-solid fa-plus"></i></button>
+											</div>
+										</div>
+									</div>
+									<div class="text-center mt-3">
+										<div class="text-sm text-start user-select-none">Ket: <span class="text-danger">*</span> wajib diisi</div>
+										<button class="btn btn-lg btn-outline-primary fw-bold border border-3 border-primary" type="button" name="submit" id="submit">Preview <i class="fa-solid fa-angle-right"></i></button>
+										<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+									</div>
+								</form>
+								<div class="overflow-col fw-bold mt-4 d-none" id="dragSpace">
+									<div class="mt-2" id="wrapperBoxes">
+										<!-- BARIS PSUPIR (KANAN)-->
+										<div class="d-flex align-items-stretch justify-content-center" id="kanan_0"></div>
+										<!-- Baris belakang sebelah psupir -->
+										<div class="" id="kanan_1"></div>
+										<!-- SPASI -->
+										<div class="" id="spasi"></div>
+										<!-- BARIS KIRI -->
+										<div class="" id="kiri_0"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="fixed-bottom">
+		<div class="position-absolute bottom-0 start-50 translate-middle-x">
+			<button class="btn btn-lg btn-success fw-bold border border-3 border-success d-none mb-md-2" type="button" name="submit2" id="submit2" disabled>Confirm <i class="fa-solid fa-angles-right"></i></button>
+		</div>
+	</div>
+
+	<script src="static/js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/id.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js" integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js" integrity="sha512-+ol0Tck+iZU3Wj7lJSB9/7iVlEwvVbURRJTUQ9QmjVFF8tnrltnwuafT/eu1e4GTOgbCri6YLJkvUS8YIr4U2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- MD5 -->
+	 <script src="src/jQuery-MD5/jquery.md5.js"></script>
+
+	<!-- Chart js -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+	<!-- Draggable -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/utils/Draggable.min.js?r=clKd"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+
+	<!-- HorizontallScroll -->
+	<script src="https://cdn.jsdelivr.net/npm/horizontal-scroll@1.1.0/dist/index.min.js"></script>
+
+	<!-- Jquery -->
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+
+	<!-- Smooth Scroll -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.5.1/SmoothScroll.min.js"></script>
+	
+	<!-- Custom -->
+	<script src="static/js/customapp.js"></script>
+	
+	<script>
+		// Scrol to change val
+		function funcBtnOperator() {
+			var name = $('[name="btn_operatorVal"]');
+			var timeoutId, interval;
+
+			// MouseDown
+			name.on('mousedown', function () {
+				var id = $(this).attr('data-id');
+				var operator = $(this).attr('data-operator');
+				var val = parseInt($('#' + id).val());
+				var operaotorVar = (operator == '-') ? (-1) : ((operator == '+') ? (+1) : (0));
+				$("#" + id).val(val + operaotorVar);
+				
+				timeoutId = setTimeout(function(){
+					interval = setInterval(() => {
+						val += operaotorVar;
+						$("#" + id).val(val);
+					}, 100);
+				}, 500);
+
+			}).on('mouseup mouseleave', function () {
+				clearInterval(interval);
+				clearTimeout(timeoutId);
+			});
+
+			// MouseWheel
+			$('input[name="input_jml"]').bind('mousewheel', function (e) {
+				var val = parseInt($(this).val());
+				$(this).val((e.originalEvent.wheelDelta / 120 > 0) ? (val + 1) : (val - 1));
+
+				// Disable Scroll Y
+				var scrollTo = null;
+				if (e.type == 'mousewheel') {
+					scrollTo = (e.originalEvent.wheelDelta * -1);
+				}
+				else if (e.type == 'DOMMouseScroll') {
+					scrollTo = 40 * e.originalEvent.detail;
+				}
+				if (scrollTo) {
+					e.preventDefault();
+					$(this).scrollTop(scrollTo + $(this).scrollTop());
+				}
+			});
+		}
+
+		// ASCII (B)
+		var charCode = 66, multiple = 1;
+		function funcCodetoChar() {
+			if (charCode > 90) {
+				charCode = 65;
+				multiple++;
+			}
+			var str = (String.fromCharCode(charCode)).repeat(multiple);
+			charCode++;
+			return str;
+		}
+
+		// Preview
+		function funcSubmit() {
+			$('#submit').on('click', function() {				
+				// Clear
+				$('#dragSpace').removeClass('d-none');
+				$(this).blur();
+				$('#submit2').addClass('d-none').attr('disabled', true);
+				$('#kanan_0').html('');
+				$('#kanan_1').html('');
+				$('#spasi').html('');
+				$('#kiri_0').html('');
+
+				// Init
+				var jml_baris = $('#input_jmlBaris').val();
+				var jml_colKanan = $('#input_colKanan').val();
+				var jml_spasi = $('#input_jmlSpasi').val();
+				var jml_colKiri = $('#input_colKiri').val();
+
+				var psupir, ChartoString;
+				psupir = '';
+				psupir += '<div class="px-1">'
+					psupir += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-secondary user-select-none">Psupir</div>'
+				psupir += '</div>'
+				psupir += '<div class="bg-primary px-1 mx-1"></div>'
+				psupir += '<div class="d-flex align-items-stretch justify-content-center">'
+				for (i = 1; i <= jml_baris; i++) {
+					psupir += `<div class="px-1" id="A${i}" name="elem_kursi">`
+						psupir += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+							psupir += '<div class="row d-flex align-items-center justify-content-center">'
+								psupir += `<div class="col-12 text-center">A${i}</div>`
+								psupir += '<div class="col-12 text-center" name="btn_hapusDisable">'
+									psupir += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('A${i}','')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+									psupir += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('A${i}','')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+								psupir += '</div>'
+							psupir += '</div>'
+						psupir += '</div>'
+					psupir += '</div>'
+				}
+				psupir += '</div>'
+				$('#kanan_0').append(psupir);
+
+				var kanan_1;
+				for (i = 1; i < jml_colKanan; i++) {
+					ChartoString = funcCodetoChar();
+
+					kanan_1 = ''
+					kanan_1 += '<div class="d-flex align-items-stretch justify-content-center">'
+						kanan_1 += `<div class="px-1 pt-2" id="${ChartoString}0" name="elem_kursi">`
+							// kanan_1 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover" >' + ChartoString + '0</div >'
+							kanan_1 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								kanan_1 += '<div class="row d-flex align-items-center justify-content-center">'
+									kanan_1 += `<div class="col-12 text-center">${ChartoString}0</div>`
+									kanan_1 += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										kanan_1 += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString}0')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										kanan_1 += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString}0')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									kanan_1 += '</div>'
+								kanan_1 += '</div>'
+							kanan_1 += '</div>'
+						kanan_1 += '</div>'
+						kanan_1 += '<div class="bg-primary px-1 mx-1"></div>'
+					for (j = 1; j <= jml_baris; j++) {
+						kanan_1 += `<div class="px-1 pt-2" id="${ChartoString + j}" name="elem_kursi">`
+							// kanan_1 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover" >' + ChartoString + j + '</div >'
+							kanan_1 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								kanan_1 += '<div class="row d-flex align-items-center justify-content-center">'
+									kanan_1 += `<div class="col-12 text-center">${ChartoString + j}</div>`
+									kanan_1 += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										kanan_1 += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString + j}')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										kanan_1 += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString + j}')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									kanan_1 += '</div>'
+								kanan_1 += '</div>'
+							kanan_1 += '</div>'
+						kanan_1 += '</div>'
+					}
+					kanan_1 += '</div>'
+					$('#kanan_1').append(kanan_1);
+				}
+
+				var spasi;
+				for (i = 0; i < jml_spasi; i++) {
+					ChartoString = funcCodetoChar();
+
+					spasi = ''
+					spasi += '<div class="d-flex align-items-stretch justify-content-center">'
+						spasi += `<div class="px-1 pt-2" id="${ChartoString}0" name="elem_kursi">`
+							// spasi += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">' + ChartoString + '0</div>'
+							spasi += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								spasi += '<div class="row d-flex align-items-center justify-content-center">'
+									spasi += `<div class="col-12 text-center">${ChartoString}0</div>`
+									spasi += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										spasi += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString}0')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										spasi += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString}0')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									spasi += '</div>'
+								spasi += '</div>'
+							spasi += '</div>'
+						spasi += '</div>'
+						spasi += '<div class="bg-primary px-1 mx-1"></div>'
+					for (j = 1; j <= jml_baris-1; j++) {
+						spasi += '<div class="px-1">'
+							spasi += '<div class="custom-box user-select-none"></div>'
+						spasi += '</div>'
+					}
+						spasi += `<div class="px-1 pt-2" id="${ChartoString + jml_baris}" name="elem_kursi">`
+							// spasi += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">' + ChartoString + jml_baris + '</div>'
+							spasi += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								spasi += '<div class="row d-flex align-items-center justify-content-center">'
+									spasi += `<div class="col-12 text-center">${ChartoString + jml_baris}</div>`
+									spasi += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										spasi += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString + jml_baris}')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										spasi += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString + jml_baris}')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									spasi += '</div>'
+								spasi += '</div>'
+							spasi += '</div>'
+						spasi += '</div>'
+					spasi += '</div>'
+					$('#spasi').append(spasi);
+				}
+
+				var kiri_0, pb;
+				for (i = 0; i < jml_colKiri; i++) {
+					ChartoString = funcCodetoChar();
+
+					kiri_0 = ''
+					kiri_0 += '<div class="d-flex align-items-stretch justify-content-center">'
+						kiri_0 += `<div class="px-1 pt-2" id="${ChartoString}0" name="elem_kursi">`
+							// kiri_0 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">' + ChartoString + '0</div>'
+							kiri_0 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								kiri_0 += '<div class="row d-flex align-items-center justify-content-center">'
+									kiri_0 += `<div class="col-12 text-center">${ChartoString}0</div>`
+									kiri_0 += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										kiri_0 += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString}0')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										kiri_0 += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString}0')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									kiri_0 += '</div>'
+								kiri_0 += '</div>'
+							kiri_0 += '</div>'
+						kiri_0 += '</div>'
+						kiri_0 += '<div class="bg-primary px-1 mx-1"></div>'
+					for (j = 1; j <= jml_baris; j++) {
+						kiri_0 += `<div class="px-1 pt-2" id="${ChartoString + j}" name="elem_kursi">`
+							// kiri_0 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">' + ChartoString + j + '</div>'
+							kiri_0 += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+								kiri_0 += '<div class="row d-flex align-items-center justify-content-center">'
+									kiri_0 += `<div class="col-12 text-center">${ChartoString + j}</div>`
+									kiri_0 += '<div class="col-12 text-center" name="btn_hapusDisable">'
+										kiri_0 += `<button class="button button-55 button-55-active py-1" onclick="funcHapusKursi('${ChartoString + j}')" name="btnHapus"><i class="fa-solid fa-trash text-danger"></i></button>`
+										kiri_0 += `<button class="button button-55 button-55-active py-1" onclick="funcDisableKursi('${ChartoString + j}')" name="btnDisable"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+									kiri_0 += '</div>'
+								kiri_0 += '</div>'
+							kiri_0 += '</div>'
+						kiri_0 += '</div>'
+					}
+					kiri_0 += '</div>'
+					$('#kiri_0').append(kiri_0);
+				}
+
+				// Center Element
+				var element = $('#dragSpace');
+				if ($("#dragSpace").prop('scrollWidth') > $("#dragSpace").width()) {
+					$("#dragSpace").removeClass('justify-content-center')
+				} else {
+					$("#dragSpace").addClass('justify-content-center')
+				}
+
+				// Show submit2 btn
+				$('#submit2').removeClass('d-none').attr('disabled', false);
+				// Reset var
+				charCode = 66;
+				multiple = 1;
+			});
+		}
+		function funcHapusKursi(id, A='pt-2', status = 'default') {
+			var spasi = '';
+			spasi += `<div class="px-1 ${A}" id="${id}">`
+				spasi += '<div class="custom-box d-flex align-items-center justify-content-center user-select-none">'
+					spasi += '<div class="row">'
+						spasi += `<button class="button button-55 button-55-active py-1" name="btnRestore" onclick="funcRestoreKursi('${id}','${A}','${status}')"><i class="fa-solid fa-trash-arrow-up"></i></button>`
+					spasi += '</div>'
+				spasi += '</div>'
+			spasi += '</div>'
+			$('#'+id).fadeOut(200, function() {
+				$(this).replaceWith(spasi);
+			})
+		}
+		function funcDisableKursi(id, A='pt-2', status = 'disabled') {
+			var disabled = '';
+			disabled += `<div class="px-1 ${A}" id="${id}">`
+				disabled += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-secondary user-select-none bg-secondary text-light">'
+					disabled += '<div class="row">'
+						disabled += `<div class="col-12 text-center">${id}</div>`
+						disabled += `<div class="col-12 text-center">`
+							disabled += `<button class="button button-55 button-55-active py-1" name="btnHapus" onclick="funcHapusKursi('${id}','${A}','${status}')"><i class="fa-solid fa-trash text-danger"></i></button>`
+							disabled += `<button class="button button-55 button-55-active py-1" name="btnRestore" onclick="funcRestoreKursi('${id}','${A}')"><i class="fa-solid fa-toggle-off text-primary"></i></button>`
+						disabled += '</div>'
+					disabled += '</div>'
+				disabled += '</div>'
+			disabled += '</div>'
+			$('#' + id).replaceWith(disabled);
+		}
+		function funcRestoreKursi(id, A='pt-2', status = 'default') {
+			var restore = '';
+			restore += `<div class="px-1 ${A}" id="${id}" name="elem_kursi">`
+				restore += '<div class="custom-box d-flex align-items-center justify-content-center border border-3 border-primary user-select-none custom-box-hover">'
+					restore += '<div class="row d-flex align-items-center justify-content-center">'
+						restore += `<div class="col-12 text-center">${id}</div>`
+						restore += '<div class="col-12 text-center" name="btn_hapusDisable">'
+							restore += `<button class="button button-55 button-55-active py-1" name="btnHapus" onclick="funcHapusKursi('${id}','${A}')"><i class="fa-solid fa-trash text-danger"></i></button>`
+							restore += `<button class="button button-55 button-55-active py-1" name="btnDisable" onclick="funcDisableKursi('${id}','${A}')"><i class="fa-solid fa-toggle-on text-primary"></i></button>`
+						restore += '</div>'
+					restore += '</div>'
+				restore += '</div>'
+			restore += '</div>'
+			if (status == 'disabled') {
+				funcDisableKursi(id, A, 'default');
+			} else {
+				$('#' + id).replaceWith(restore);
+			}
+		}
+
+		// jQuery(function ($) {
+		// 	$.fn.hScroll = function (amount) {
+		// 		amount = amount || 120;
+		// 		$(this).bind("DOMMouseScroll mousewheel", function (event) {
+		// 			var oEvent = event.originalEvent,
+		// 				direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
+		// 				position = $(this).scrollLeft();
+		// 			position += direction > 0 ? -amount : amount;
+		// 			$(this).scrollLeft(position);
+		// 			event.preventDefault();
+		// 		})
+		// 	};
+		// });
+
+		// Scroll overflow X
+		function funcScrollXGrab(id) {
+			var isDown = false;
+			var scrollX;
+			var scrollLeft;
+			var scroll = $(id);
+			// Mouse Up Function
+			scroll.mouseup(function () {
+				isDown = false;
+				scroll.removeClass("active").removeClass("cursor-grabbing");
+				$('button[name="btnHapus"]').css("cursor", "pointer");
+				$('button[name="btnDisable"]').css("cursor", "pointer");
+				$('button[name="btnRestore"]').css("cursor", "pointer");
+			});
+
+			// Mouse Leave Function
+			scroll.mouseleave(function () {
+				isDown = false;
+				scroll.removeClass("active").removeClass("cursor-grabbing");
+				$('button[name="btnHapus"]').css("cursor", "pointer");
+				$('button[name="btnDisable"]').css("cursor", "pointer");
+				$('button[name="btnRestore"]').css("cursor", "pointer");
+			});
+
+			// Mouse Down Function
+			scroll.mousedown(function (e) {
+				e.preventDefault();
+				isDown = true;
+				scroll.addClass("active");
+				scrollX = e.pageX - scroll.offset().left;
+				scrollLeft = scroll.scrollLeft();
+			});
+
+			// Mouse Move Function
+			scroll.mousemove(function (e) {
+				if (!isDown) return;
+				scroll.addClass("cursor-grabbing");
+				$('button[name="btnHapus"]').css("cursor", "grabbing");
+				$('button[name="btnDisable"]').css("cursor", "grabbing");
+				$('button[name="btnRestore"]').css("cursor", "grabbing");
+				e.preventDefault();
+				var element = e.pageX - scroll.offset().left;
+				var scrolling = (element - scrollX) * 2;
+				scroll.scrollLeft(scrollLeft - scrolling);
+			});
+		}
+		function funcScrollXWheel(id) {
+			var posX = 0;
+			$(id).bind('mousewheel', function (e, delta) {
+				$('#dragSpace').stop();
+				if ($(this).is(':animated')) {
+				}
+				posX = delta * 500;
+				$('#dragSpace').animate({ scrollLeft: '-=' + posX }, 500);
+				// this.animate({ scrollLeft: '-='+(delta * 80) }, 100);
+				// this.scrollLeft -= (delta * 80);
+				e.preventDefault();
+			});
+		}
+
+		$(document).ready(function () {
+			funcBtnOperator(); 
+			funcSubmit();
+
+			// $('.overflow-col').hScroll(40);
+			funcScrollXGrab("#dragSpace");
+			// funcScrollXWheel("#dragSpace");
+		});
+
+		// TweenMax.set("body", { overflowY: 'scroll' });
+
+		// var scrollSpeed = 1; // half of user scroll
+		// var scrollHeight = 10000;
+
+		// TweenMax.set(".testing", { height: scrollHeight, overflowY: 'scroll' });
+
+		// $(document).on("scroll", function () {
+		// 	const pixels = $(document).scrollTop();
+		// 	TweenMax.to('#wrapperBoxes', 1, { x: -0.5 * pixels })
+
+		// 	//  '0.5' = half speed of user scroll
+		// 	console.log(pixels);
+		// })
+	</script>
+
+</body>
+
+</html>
